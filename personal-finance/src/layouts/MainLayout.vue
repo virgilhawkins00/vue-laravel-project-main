@@ -16,10 +16,10 @@
       <router-view />
     </q-page-container>
     <q-footer elevated>
-      <q-tabs v-model="tab" class="text-Light">
-        <q-tab name="mails" icon="mail" label="Mails" />
-        <q-tab name="alarms" icon="alarm" label="Alarms" />
-        <q-tab name="movies" icon="movie" label="Movies" />
+      <q-tabs v-model="tab" class="text-Dark bg-transparent">
+        <q-tab name="money" icon="money" label="Expenses" />
+        <q-tab name="user" icon="person" label="My Account" />
+        <q-tab name="login" icon="login" label="login" />
       </q-tabs>
     </q-footer>
   </q-layout>
