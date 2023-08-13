@@ -1,30 +1,58 @@
 /* eslint-disable */
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+  <q-layout view="hHh lpR fFf" id="ValueSelect">
+
+    <q-header elevated class="bg-primary text-white" height-hint="98">
       <q-toolbar>
+        <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
         <q-toolbar-title>
-          Personal Finance App
+          <q-avatar>
+            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
+          </q-avatar>
+          Personal Finance
         </q-toolbar-title>
-        <q-btn align="right" class="btn-fixed-width" color="secondary" label="Login" />
-
       </q-toolbar>
+
+      <q-tabs align="left">
+        <q-route-tab to="/page1" label="Page One" />
+        <q-route-tab to="/page2" label="Page Two" />
+        <q-route-tab to="/page3" label="Page Three" />
+      </q-tabs>
     </q-header>
+
+    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
+      <!-- drawer content -->
+    </q-drawer>
 
     <q-page-container>
       <router-view />
     </q-page-container>
-    <q-footer elevated>
-      <q-tabs v-model="tab" class="text-Dark bg-transparent">
-        <q-tab name="money" icon="account_balance_wallet" label="Expenses" />
-        <q-tab name="user" icon="manage_accounts" label="My Account" />
-        <q-tab name="login" icon="login" label="login" />
-      </q-tabs>
+
+    <q-footer elevated class="bg-grey-8 text-white">
+      <q-toolbar>
+        <q-toolbar-title>
+          <div>Personal Finance</div>
+        </q-toolbar-title>
+      </q-toolbar>
     </q-footer>
+
   </q-layout>
 </template>
 
-<script setup>
+<script>
+import { ref } from 'vue'
 
+export default {
+  setup () {
+    const leftDrawerOpen = ref(false)
+
+    return {
+      leftDrawerOpen,
+      toggleLeftDrawer () {
+        leftDrawerOpen.value = !leftDrawerOpen.value
+      }
+    }
+  }
+}
 </script>

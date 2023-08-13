@@ -1,9 +1,19 @@
+/* eslint-disable */
 const routes = [
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '/route', component: () => import('pages/RoutePage.vue') }
+      {
+        path: '/route',
+        component: () => import('pages/RoutePage.vue'),
+        children: [
+          {
+            path: '', 
+            component: () => import('pages/finance/ValueSelect.vue')
+          }
+        ]
+      }
     ]
   },
 
@@ -11,7 +21,7 @@ const routes = [
   // but you can also remove it
   {
     path: '/:catchAll(.*)*',
-    component: () => import('pages/ErrorNotFound.vue')
+    component: () => import('pages/ErrorNotFound.vue'),
   }
 ]
 

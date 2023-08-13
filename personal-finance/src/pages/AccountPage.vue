@@ -1,7 +1,18 @@
 <template>
-    <router-view/>
+    <router-view v-slot="{ Component }">
+    <transition
+      appear
+      enter-active-class="animated bounceInLeft"
+    >
+      <component :is="Component" />
+    </transition>
+  </router-view>
 </template>
 
-<script setup></script>
+<script>
+import { defineComponent } from 'vue'
 
-<style lang="scss"></style>
+export default defineComponent({
+  name: 'AccountPage'
+})
+</script>
