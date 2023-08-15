@@ -1,57 +1,41 @@
-/* eslint-disable */
 <template>
-  <q-layout view="hHh lpR fFf" id="ValueSelect">
+  <q-layout view="hHh lpR fFf" v-if="appReady">
+    <app-header v-model:leftDrawerOpen="leftDrawerOpen" />
 
-    <q-header elevated class="bg-primary text-white" height-hint="98">
-      <q-toolbar>
-        <q-btn flat round icon="menu" @click="toggleLeftDrawer" />
-
-        <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-          </q-avatar>
-          Personal Finance
-        </q-toolbar-title>
-      </q-toolbar>
-      <q-tabs align="left">
-        <q-route-tab to="/page1" label="Page One" />
-        <q-route-tab to="/page2" label="Page Two" />
-        <q-route-tab to="/page3" label="Page Three" />
-      </q-tabs>
-    </q-header>
-
-    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
-      <!-- drawer content -->
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
+      <app-menu class="q-mt-sm" />
     </q-drawer>
 
     <q-page-container>
       <router-view />
     </q-page-container>
-
-    <q-footer elevated class="bg-grey-8 text-white">
-      <q-toolbar>
-        <q-toolbar-title>
-          <div>Personal Finance</div>
-        </q-toolbar-title>
-      </q-toolbar>
-    </q-footer>
-
   </q-layout>
 </template>
 
 <script>
-import { ref } from 'vue'
+import AppHeader from 'components/Layout/Header/Header';
+import AppMenu from 'components/Layout/Menu/Menu';
+import { mapGetters } from 'vuex';
 
 export default {
-  setup () {
-    const leftDrawerOpen = ref(false)
-
+  name: 'MainLayout',
+  components: {
+    AppHeader,
+    AppMenu,
+  },
+  data() {
     return {
-      leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      }
-    }
-  }
-}
+      leftDrawerOpen: false,
+    };
+  },
+  computed: {
+    ...mapGetters('app', ['appReady']),
+  },
+};
 </script>
+
+<style lang="scss">
+.q-toolbar {
+  height: 64px;
+}
+</style>
