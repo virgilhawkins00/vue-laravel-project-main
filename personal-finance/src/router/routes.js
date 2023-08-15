@@ -2,16 +2,15 @@
 const routes = [
   {
     path: '/',
+    
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
         path: '/route',
         component: () => import('pages/RoutePage.vue'),
         children: [
-          {
-            path: '', 
-            component: () => import('pages/finance/ValueSelect.vue')
-          }
+          { path: '', component: () => import('pages/finance/ValueSelect.vue') },
+          
         ]
       }
     ]

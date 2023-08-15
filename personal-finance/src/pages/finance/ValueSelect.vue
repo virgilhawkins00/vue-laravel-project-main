@@ -11,6 +11,9 @@
 
       <q-btn flat round dense icon="whatshot" />
     </q-toolbar>
+    <div class="form-style">
+      <div>Where you would like to manage your finances</div>
+    </div>
   </div>
 </q-page>
 </template>
@@ -19,6 +22,10 @@
 
 <style lang="scss">
 #valueSelect {
-
+.form-style {
+  margin: 0 auto;
+  // height: calc (100vh - 100px);
+  max-width: 500px;
+}
 }
 </style>
