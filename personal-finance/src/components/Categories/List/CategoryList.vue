@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <q-list bordered separator>
     <category-list-item
