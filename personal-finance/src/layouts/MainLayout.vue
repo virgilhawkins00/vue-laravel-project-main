@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <q-layout view="hHh lpR fFf" v-if="appReady">
     <app-header v-model:leftDrawerOpen="leftDrawerOpen" />

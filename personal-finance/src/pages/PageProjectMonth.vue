@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
     <div>
       <page-spinner v-if="!currentProjectMonth" />

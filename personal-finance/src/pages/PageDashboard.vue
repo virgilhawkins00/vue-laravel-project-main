@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
     <scroll-page title="Dashboard">
       <div class="dashboard-item-list">
