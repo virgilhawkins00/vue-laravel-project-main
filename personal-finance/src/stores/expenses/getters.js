@@ -1,3 +1,3 @@
 export function expenses(state) {
-    return state.expenses;
-  }
+  return state.expenses;
+}

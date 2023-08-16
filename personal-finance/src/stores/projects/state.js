@@ -1,7 +1,7 @@
 export default function () {
-    return {
-      currentProject: null,
-      currentProjectMonth: null,
-      projects: [],
-    };
-  }
+  return {
+    currentProject: null,
+    currentProjectMonth: null,
+    projects: [],
+  };
+}

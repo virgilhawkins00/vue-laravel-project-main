@@ -1,3 +1,3 @@
 export function categories(state) {
-    return state.categories;
-  }
+  return state.categories;
+}
