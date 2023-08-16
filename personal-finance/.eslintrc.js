@@ -53,6 +53,10 @@ module.exports = {
 
   // add your custom rules here
   rules: {
+
+    'vue/multi-word-component-names': 'off',
+    "arrow-body-style": 0,
+    
     'no-param-reassign': 'off',
     'no-void': 'off',
     'no-nested-ternary': 'off',
