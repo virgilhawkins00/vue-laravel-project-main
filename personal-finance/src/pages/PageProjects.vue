@@ -1,4 +1,3 @@
-/* eslint-disable */
 <template>
     <scroll-page
       title="Projects"
