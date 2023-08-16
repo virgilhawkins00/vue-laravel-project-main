@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-/* eslint-disable */
->>>>>>> 2ab81b6a3b31a47913fa5eefeb82a7e5c9210adc
 import { LocalStorage } from 'quasar';
 
 export default async ({ router, store }) => {
@@ -20,9 +16,4 @@ export default async ({ router, store }) => {
     } else {
       next();
     }
-  });
-<<<<<<< HEAD
-};
-=======
-};
->>>>>>> 2ab81b6a3b31a47913fa5eefeb82a7e5c9210adc
+  })}
