@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { Dialog, Loading } from 'quasar';
 
 export function showErrorMessageWithTitle(errorTitle, errorMessage) {

@@ -1,8 +1,9 @@
 <template>
   <scroll-page
-  title="Categories"
-  actionName="Add new category"
-  v-model:actionModel="showAddCategory">
+    title="Categories"
+    actionName="Add new category"
+    v-model:actionModel="showAddCategory"
+  >
     <category-list :categories="categories" v-if="categories.length" />
 
     <no-resource-banner v-else>

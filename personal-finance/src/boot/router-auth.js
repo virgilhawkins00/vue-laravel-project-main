@@ -7,13 +7,14 @@ export default async ({ router, store }) => {
   }
 
   router.beforeEach((to, from, next) => {
-    const currentUser = store.getters['users/currentUser'];
+    // const currentUser = store.getters['users/currentUser'];
 
-    if (!currentUser && to.path !== '/login') {
-      next('/login');
-    } else if (currentUser && to.path === '/login') {
-      next('/');
-    } else {
+    // if (!currentUser && to.path !== '/login') {
+    //   next('/login');
+    // } else if (currentUser && to.path === '/login') {
+    //   next('/');
+    // } else {
       next();
-    }
-  })}
+    // }
+  });
+};

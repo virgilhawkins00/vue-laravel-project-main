@@ -2,33 +2,43 @@
   <div>
     <page-spinner v-if="!currentProjectMonth" />
 
-    <scroll-page v-else
-    :title="formatDate(month)"
-    actionName="Add new expense"
-    v-model:actionModel="showAddExpense">
+    <scroll-page
+      v-else
+      :title="formatDate(month)"
+      actionName="Add new expense"
+      v-model:actionModel="showAddExpense"
+    >
       <template v-slot:breadcrumbs>
         <project-breadcrumbs :project="currentProjectMonth" :month="month" />
       </template>
 
       <div v-if="currentProjectMonth.expenses.length" class="q-mb-xl">
-        <expense-list :projectId="projectId" :month="month" :expenses="currentProjectMonth.expenses"
-          :users="currentProjectMonth.users" class="q-mb-xl" />
+        <expense-list
+          :projectId="projectId"
+          :month="month"
+          :expenses="currentProjectMonth.expenses"
+          :users="currentProjectMonth.users"
+          class="q-mb-xl"
+        />
 
         <big-title>Summary</big-title>
         <expense-summary
-        :users="currentProjectMonth.users"
-        :expenses="currentProjectMonth.expenses" />
+          :users="currentProjectMonth.users"
+          :expenses="currentProjectMonth.expenses"
+        />
       </div>
 
       <no-resource-banner v-model:showAddExpense="showAddExpense" v-else>
         There is no expense in this month. Add a new expense and it will show up
         here.
       </no-resource-banner>
+
       <app-dialog v-model:showDialog="showAddExpense">
         <add-expense
-        @save="handleAddExpense"
-        :projectId="projectId"
-        :users="currentProjectMonth.users" />
+          @save="handleAddExpense"
+          :projectId="projectId"
+          :users="currentProjectMonth.users"
+        />
       </app-dialog>
     </scroll-page>
   </div>

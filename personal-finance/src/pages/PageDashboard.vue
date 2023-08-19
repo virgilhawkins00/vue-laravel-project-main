@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style>
-.dashboard-item-list>* {
+.dashboard-item-list > * {
   margin: 10px 0;
 }
 </style>

@@ -1,6 +1,10 @@
 <template>
   <div>
-    <scroll-page title="Users" actionName="Add new user" v-model:actionModel="showAddUser">
+    <scroll-page
+      title="Users"
+      actionName="Add new user"
+      v-model:actionModel="showAddUser"
+    >
       <user-list v-if="users.length" :users="users" />
 
       <no-resource-banner v-else>

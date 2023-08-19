@@ -2,10 +2,12 @@
   <div>
     <page-spinner v-if="!currentProject" />
 
-    <scroll-page v-else
-    :title="currentProject.name"
-    actionName="Add new expense"
-    v-model:actionModel="showAddExpense">
+    <scroll-page
+      v-else
+      :title="currentProject.name"
+      actionName="Add new expense"
+      v-model:actionModel="showAddExpense"
+    >
       <template v-slot:breadcrumbs>
         <project-breadcrumbs :project="currentProject" />
       </template>
@@ -14,11 +16,18 @@
         <div v-for="year in years" :key="year">
           <medium-title>{{ year }}</medium-title>
 
-          <project-by-month-list :projectId="currentProject.id" :expensesByMonth="months(year)" />
+          <project-by-month-list
+            :projectId="currentProject.id"
+            :expensesByMonth="months(year)"
+          />
         </div>
       </div>
 
-      <no-resource-banner v-model:showAddExpense="showAddExpense" v-else class="q-mb-xl">
+      <no-resource-banner
+        v-model:showAddExpense="showAddExpense"
+        v-else
+        class="q-mb-xl"
+      >
         There is no expense in this project. Add a new expense and it will show
         up here.
       </no-resource-banner>
@@ -27,9 +36,10 @@
 
       <app-dialog v-model:showDialog="showAddExpense">
         <add-expense
-        @save="handleAddExpense"
-        :projectId="projectId"
-        :users="currentProject.users" />
+          @save="handleAddExpense"
+          :projectId="projectId"
+          :users="currentProject.users"
+        />
       </app-dialog>
     </scroll-page>
   </div>
