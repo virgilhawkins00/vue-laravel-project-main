@@ -15,6 +15,6 @@ export default async ({ router, store }) => {
     //   next('/');
     // } else {
       next();
-    // }
+  //   }
   });
 };
