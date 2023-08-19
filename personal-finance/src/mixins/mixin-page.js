@@ -1,4 +1,3 @@
-/* eslint-disable */
 import ScrollPage from 'src/components/Shared/ScrollPage';
 import BigTitle from 'src/components/Shared/Titles/BigTitle';
 import NoResourceBanner from 'src/components/Shared/Banners/NoResourceBanner';

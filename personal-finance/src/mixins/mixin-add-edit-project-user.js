@@ -1,4 +1,3 @@
-/* eslint-disable */
 import Modal from 'src/components/Shared/Modals/Modal';
 import ModalProjectUserWeight from 'src/components/Projects/Modals/Shared/ModalProjectUserWeight';
 import ModalProjectUserSelect from 'src/components/Projects/Modals/Shared/ModalProjectUserSelect';
