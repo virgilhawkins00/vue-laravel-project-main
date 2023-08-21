@@ -47,8 +47,11 @@
     "@quasar/quasar-app-extension-testing-unit-jest": "^3.0.0-beta.5",
     "@vue/babel-preset-app": "^5.0.8",
     "@vue/devtools": "^6.5.0",
+<<<<<<< HEAD
     "@vue/test-utils": "^2.2.0",
     "electron": "^26.0.0",
+=======
+>>>>>>> 94e056a (i don't know)
     "eslint": "^8.2.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-config-standard": "^17.0.0",
